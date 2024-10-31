@@ -1,0 +1,35 @@
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.1/phpunit.xsd"
+	backupGlobals="true"
+	backupStaticAttributes="false"
+	colors="true"
+	stopOnError="false"
+	stopOnFailure="false"
+	stopOnIncomplete="false"
+	stopOnSkipped="false"
+	stopOnRisky="false"
+	verbose="true">
+	<testsuites>
+		<testsuite name="NetPay WooCommerce Test Suite">
+			<directory suffix="-test.php">tests/unit</directory>
+		</testsuite>
+	</testsuites>
+    <coverage>
+        <include>
+            <directory suffix=".php">./*</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">tests</directory>
+            <directory suffix=".php">vendor</directory>
+        </exclude>
+    </coverage>
+	<php>
+		<server name="HTTP_CLIENT_IP" value="192.168.1.1"/>
+		<server name="HTTP_X_FORWARDED_FOR" value="192.168.1.2"/>
+		<server name="HTTP_X_FORWARDED" value="192.168.1.3"/>
+		<server name="HTTP_FORWARDED_FOR" value="192.168.1.4"/>
+		<server name="HTTP_FORWARDED" value="192.168.1.5"/>
+		<server name="REMOTE_ADDR" value="192.168.1.6"/>
+	</php>
+</phpunit>
